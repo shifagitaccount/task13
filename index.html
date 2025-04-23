@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Practice</title>
+</head>
+<body>
+  <h2>1. Print Name and Address</h2>
+  <button onclick="printNameAddress()">Show</button>
+  <p id="output1"></p>
+
+  <h2>2. Check Value and Data Type</h2>
+  <button onclick="checkValueType()">Check</button>
+  <p id="output2"></p>
+
+  <h2>3. Add Two Strings and Capitalize</h2>
+  <input type="text" id="str1" placeholder="First string">
+  <input type="text" id="str2" placeholder="Second string">
+  <button onclick="combineStrings()">Combine</button>
+  <p id="output3"></p>
+
+  <h2>4. String Length in Bytes</h2>
+  <input type="text" id="byteString" placeholder="Enter string">
+  <button onclick="getStringBytes()">Get Byte Length</button>
+  <p id="output4"></p>
+
+  <h2>5. Round a Number</h2>
+  <input type="number" id="num" placeholder="Enter number">
+  <input type="number" id="digits" placeholder="Decimal places">
+  <button onclick="roundNumber()">Round</button>
+  <p id="output5"></p>
+
+  <script>
+    // 1. Print Name and Address
+    function printNameAddress() {
+      const name = "John Doe";
+      const address = "123 Main Street, Cityville";
+      document.getElementById("output1").innerText = `Name: ${name}, Address: ${address}`;
+    }
+
+    // 2. Check value and data-type
+    function checkValueType() {
+      let a = 100;
+      let b = "100";
+      let result = (a === b) ? "Same value and type" : "Different value or type";
+      document.getElementById("output2").innerText = result;
+    }
+
+    // 3. Add strings and capitalize
+    function combineStrings() {
+      let str1 = document.getElementById("str1").value;
+      let str2 = document.getElementById("str2").value;
+      let combined = (str1 + str2).toUpperCase();
+      document.getElementById("output3").innerText = combined;
+    }
+
+    // 4. Get byte length of string
+    function getStringBytes() {
+      let str = document.getElementById("byteString").value;
+      let bytes = new Blob([str]).size;
+      document.getElementById("output4").innerText = `Byte Length: ${bytes}`;
+    }
+
+    // 5. Round number to digits
+    function roundNumber() {
+      let number = parseFloat(document.getElementById("num").value);
+      let digits = parseInt(document.getElementById("digits").value);
+      let rounded = number.toFixed(digits);
+      document.getElementById("output5").innerText = `Rounded: ${rounded}`;
+    }
+  </script>
+</body>
+</html>
